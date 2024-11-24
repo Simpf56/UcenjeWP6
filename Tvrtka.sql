@@ -38,4 +38,6 @@ values	(1,1,'Kad će plaća?'),
 		(3,5,'Kako mogu unaprijediti svoje vještine?'),
 		(3,6,'Kako napredovati dalje?');
 
+select *from Zaposlenici;
+
 select * from Slike;
