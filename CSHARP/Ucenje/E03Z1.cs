@@ -10,7 +10,7 @@ namespace Ucenje
         // zbroj
         // razliku drugog i prvog
         // umnožak
-        //zbroj kvadrata prvog i drugog broja
+        // zbroj kvadrata prvog i drugog broja
         // kvocijent prvog
 {
     internal class E03Z1
@@ -26,15 +26,6 @@ namespace Ucenje
             Console.WriteLine((a*a)+(b*b));
             Console.WriteLine(a/(float) b);
             Console.WriteLine("Bravo");
-
-
-
         }
-
-
-
-
-
-
     }
 }
