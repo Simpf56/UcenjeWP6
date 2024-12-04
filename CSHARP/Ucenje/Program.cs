@@ -4,8 +4,10 @@ using Ucenje;
 
 //E02VarijableTipoviPodataka.Izvedi();
 //E01UlazIzlaz.Izvedi();
-E02Z1.Izvedi();
+//E02Z1.Izvedi();
+//E03Operatori.Izvedi()
 // komentar jedna linija
+E03Z1.Izvodi();
 
 /*
 
