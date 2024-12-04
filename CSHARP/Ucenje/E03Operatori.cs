@@ -72,15 +72,15 @@ namespace Ucenje
 
             Console.WriteLine(++b);
 
-            //int t = 0, c = 1;
-            //t = c++ + t; // t = 1, c = 2
-            //c += ++t; // c = 4, t = 2
-            //Console.WriteLine(c +t); // 6
-
             int t = 0, c = 1;
             t = c++ + t; // t = 1, c = 2
-            c += --t; // c = 4, t = 2
-            Console.WriteLine(c + t); // 6 
+            c += ++t; // c = 4, t = 2
+            Console.WriteLine(c + t); // 6
+
+            int g = 0, z = 1;
+            g = z++ + g; // g = 1, z = 2
+            z += --g; // g = 0, z = 2
+            Console.WriteLine(z + g); // 2 
 
 
 
