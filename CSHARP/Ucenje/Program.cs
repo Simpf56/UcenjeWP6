@@ -7,7 +7,8 @@ using Ucenje;
 //E02Z1.Izvedi();
 //E03Operatori.Izvedi()
 // komentar jedna linija
-E03Z1.Izvodi();
+//E03Z1.Izvodi();
+E04UvjetnoGrananjeIf.Izvedi();
 
 /*
 
