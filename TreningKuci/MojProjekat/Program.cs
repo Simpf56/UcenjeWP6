@@ -17,4 +17,5 @@ using MojProjekat;
 //    }
 //}
 
-VK1.VjezbaKuci1();
+//VK1.VjezbaKuci();
+VK2.VjezbaKuci();

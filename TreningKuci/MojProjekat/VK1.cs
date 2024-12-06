@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MojProjekat
 {
     internal class VK1 {
-        public static void VjezbaKuci1()
+        public static void VjezbaKuci()
         {
             int a = 2, b = 3;
             a = b-- + a; // 2 = 3-- + 2 ---------> a = 5 b = 2
