@@ -10,7 +10,9 @@ using Ucenje;
 //E03Z1.Izvodi();
 //E04UvjetnoGrananjeIf.Izvedi();
 //E04Z1.Izvedi();
-E05UvjetnoGrananjeSwitch.Izvedi();
+//E05UvjetnoGrananjeSwitch.Izvedi();
+//E06Nizovi.Izvedi();
+E04Z2.Izvedi();
 
 /*
 

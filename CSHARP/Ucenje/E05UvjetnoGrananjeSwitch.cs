@@ -16,20 +16,20 @@ namespace Ucenje
 
             switch (i)
             {
-                    case 1:
-                        Console.WriteLine("Nedovoljan");
-                        break;
-                    case 2:
-                        Console.WriteLine("Dovoljan");
-                        break;
-                    default:
-                        Console.WriteLine("Ostalo");
-                        break;
+                case 1:
+                    Console.WriteLine("Nedovoljan");
+                    break;
+                case 2:
+                    Console.WriteLine("Dovoljan");
+                    break;
+                default:
+                    Console.WriteLine("Ostalo");
+                    break;
             }
 
             char znak = 'Š';
             Console.WriteLine(znak);
-            Console.WriteLine((int)znak);
+            Console.WriteLine((int)znak);              
             
         }
     }
