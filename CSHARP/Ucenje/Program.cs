@@ -9,7 +9,9 @@ using Ucenje;
 // komentar jedna linija
 //E03Z1.Izvodi();
 //E04UvjetnoGrananjeIf.Izvedi();
-E04Z1.Izvedi();
+//E04Z1.Izvedi();
+E05UvjetnoGrananjeSwitch.Izvedi();
+
 /*
 
 Komentar više linija 
