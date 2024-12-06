@@ -46,6 +46,26 @@ namespace Ucenje
             {
                 Console.WriteLine("Ne znam koja je to regija.");
             }
+
+            switch (grad)
+            {
+                case "Osijek":
+                    Console.WriteLine("Slavonija");
+                    break;
+                case "Zadar":
+                    Console.WriteLine("Dalmacija");
+                    break;
+                case "Čakovec":
+                    Console.WriteLine("Međimurje");
+                    break;
+                case "Pula":
+                    Console.WriteLine("Istra");
+                    break;
+                default:
+                    Console.WriteLine("Ne znam koja je to regija.");
+                    break;
+
+            }
         }
     }
 }
