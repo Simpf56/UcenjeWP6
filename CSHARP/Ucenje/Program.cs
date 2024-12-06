@@ -8,8 +8,8 @@ using Ucenje;
 //E03Operatori.Izvedi()
 // komentar jedna linija
 //E03Z1.Izvodi();
-E04UvjetnoGrananjeIf.Izvedi();
-
+//E04UvjetnoGrananjeIf.Izvedi();
+E04Z1.Izvedi();
 /*
 
 Komentar više linija 

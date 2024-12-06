@@ -103,7 +103,7 @@ namespace Ucenje
 
             Console.WriteLine(grad=="Osijek" ? "Super" : "Nije Super");
 
-            Console.WriteLine((grad == "Osijek" ? "" : "Nije ") + "Super"); ;
+            Console.WriteLine((grad == "Osijek" ? "" : "Nije ") + "Super"); ; // tezimo ovakvom nacinu pisanja
 
 
 
