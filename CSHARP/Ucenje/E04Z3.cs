@@ -1,33 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ucenje
 {
-    internal class E04Z2
+    internal class E04Z3
     {
         public static void Izvedi()
         {
-            //Console.WriteLine("E04Z2");
+            //Console.WriteLine("E04Z3");
 
             Console.WriteLine("Unesi cijeli broj: ");
-            int broj = int.Parse(Console.ReadLine());
+            int broj1 = int.Parse(Console.ReadLine());
+            int broj2 = int.Parse(Console.ReadLine());
 
-            if (broj % 2 == 0)
+            if (broj1 < broj2)
             {
-                Console.WriteLine("Paran");
+                Console.WriteLine(broj1);
             }
             else
             {
-                Console.WriteLine("Neparan");
+                Console.WriteLine(broj2);
             }
 
-            Console.WriteLine(broj % 2 == 0 ? "Paran" : "Neparan");
-
-
-            
         }
     }
 }

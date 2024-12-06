@@ -12,7 +12,8 @@ using Ucenje;
 //E04Z1.Izvedi();
 //E05UvjetnoGrananjeSwitch.Izvedi();
 //E06Nizovi.Izvedi();
-E04Z2.Izvedi();
+//E04Z2.Izvedi();
+E04Z3.Izvedi();
 
 /*
 
