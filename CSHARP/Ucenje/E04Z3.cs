@@ -16,14 +16,19 @@ namespace Ucenje
             Console.WriteLine("Unesi cijeli broj: ");
             int broj1 = int.Parse(Console.ReadLine());
             int broj2 = int.Parse(Console.ReadLine());
+            int broj3 = int.Parse(Console.ReadLine());
 
-            if (broj1 < broj2)
+            if (broj1 < broj2 && broj1 < broj3)
             {
                 Console.WriteLine(broj1);
             }
-            else
+            else if ( broj2 < broj1 && broj1 < broj3)
             {
                 Console.WriteLine(broj2);
+            }
+            else 
+            {
+                Console.WriteLine(broj3);
             }
 
         }
