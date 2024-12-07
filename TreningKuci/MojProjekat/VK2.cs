@@ -71,11 +71,49 @@ namespace MojProjekat
 
             int x = 1, y = 0;
 
-            if(x != 1 & y > 0)
+            if (x != 1 & y > 0)
             {
-                Console.WriteLine("Osijek"); 
+                Console.WriteLine("Osijek");
             }
 
+            if (x != 1 && y > 0)
+            {
+                Console.WriteLine("Osijek");
+            }
+
+            if (x == 1 | y == 0)
+            {
+                Console.WriteLine("Osijek");
+            }
+
+            if (x == 1 || y== 0)
+            {
+                Console.WriteLine("Osijek");
+            }
+
+            int ocjena = 3;
+
+            switch (ocjena)
+            {
+                case 1:
+                    Console.WriteLine("Nedovoljan");
+                    break;
+                case 2:
+                    Console.WriteLine("Dovoljan");
+                    break;
+                case 3:
+                    Console.WriteLine("Dobar");
+                    break;
+                case 4:
+                    Console.WriteLine("Vrlo Dobar");
+                    break;
+                case 5:
+                    Console.WriteLine("Odličan");
+                    break;
+                default:
+                    Console.WriteLine("Nije cjena");
+                    break ;
+            }
 
 
 
