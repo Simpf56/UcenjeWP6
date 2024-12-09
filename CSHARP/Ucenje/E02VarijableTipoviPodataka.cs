@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-
-namespace Ucenje
+﻿namespace Ucenje
 {
     internal class E02VarijableTipoviPodataka
     {
@@ -16,26 +9,31 @@ namespace Ucenje
 
             //Console.WriteLine("Hello E02");
 
-            //deklaracija varijable
-            int i; // i je od increment(uvecanje)
+            // int - integer - cijeli broj
 
-            Console.WriteLine("Upiši broj: ");
-            //dodjeljivanje vrijednosti
-            //i = Console.ReadLine(); ovo neradi jer je desno string a lijevo int
+            // deklaracija varijable
+            int i; // i je od increment
 
-            i = int.Parse(Console.ReadLine());
-            //korištenje vrijednosti
-            Console.WriteLine("Upisali ste u {0}, i evo ga još jednom {1}", i,i);
 
-            // bit logicka vrijednost 
+            Console.Write("Upiši broj: ");
+            // dodjeljivanje vrijednosti
+            // i = Console.ReadLine();  OVO NE RADI jer je desno string a lijevo int
 
-            bool logickaVrijednost;
+            i=int.Parse(Console.ReadLine());
+
+            // korištenje vrijednosti
+            Console.WriteLine("Upisali ste {0}, i evo ga još jednom {1}", i,i);
+
+
+            // bit - logička vrijednost
+
+            bool LogickaVrijednost;
 
             Console.Write("Unesi True ili False: ");
 
-            logickaVrijednost = bool.Parse(Console.ReadLine());
+            LogickaVrijednost = bool.Parse(Console.ReadLine());
 
-            Console.WriteLine("Unijeli ste {0}", logickaVrijednost);
+            Console.WriteLine("Unijeli ste {0}", LogickaVrijednost);
 
             // float - decimalni broj
 
@@ -43,15 +41,15 @@ namespace Ucenje
 
             Console.WriteLine(float.Parse(Console.ReadLine()));
 
-            float broj = 3.14f; // f zato sto je to float
+            float broj = 3.14F; // zato što je to float
 
-            Console.WriteLine("Unesi ime: ");
+
+            Console.Write("Unesi ime: ");
 
             string ime = Console.ReadLine();
 
             Console.WriteLine("Unio sam \n{0}\n{1}\n{2}\n{3}",
-                i, logickaVrijednost, broj, ime);
-
+                i,LogickaVrijednost,broj,ime);
 
 
 

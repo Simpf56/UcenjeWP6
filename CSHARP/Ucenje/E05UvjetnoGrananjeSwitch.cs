@@ -8,6 +8,7 @@ namespace Ucenje
 {
     internal class E05UvjetnoGrananjeSwitch
     {
+
         public static void Izvedi()
         {
             //Console.WriteLine("E05");
@@ -27,10 +28,15 @@ namespace Ucenje
                     break;
             }
 
-            char znak = 'Š';
+            // switch radi s int, string, char i drugi https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/statements#1383-the-switch-statement
+
+
+            char znak = '@';
             Console.WriteLine(znak);
-            Console.WriteLine((int)znak);              
+            Console.WriteLine((int)znak);
+            
             
         }
+
     }
 }
