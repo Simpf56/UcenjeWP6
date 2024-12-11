@@ -36,6 +36,7 @@ namespace Ucenje
             else
             {
                 //izraz ima parni broj znakova
+                //dz ovaj dio
                 Console.WriteLine("neparno");
             }
 
