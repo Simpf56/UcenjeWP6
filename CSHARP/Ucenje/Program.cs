@@ -1,8 +1,8 @@
 ﻿
 
 using Ucenje;
-
-E11Z1LOSE.Izvedi();
+E12Metode.Izvedi();
+//E11Z1LOSE.Izvedi();
 //E11TryCatch.Izvedi();
 //E10Z2.Izvedi();
 //E10Z1.Izvedi();
