@@ -18,4 +18,9 @@ using MojProjekat;
 //}
 
 //VK1.VjezbaKuci();
-VK2.VjezbaKuci();
+//VK2.VjezbaKuci();
+//VK3.VjezbaKuci();
+VK4.VjezbaKuci();
+
+
+
