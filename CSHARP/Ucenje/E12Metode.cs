@@ -34,6 +34,7 @@ namespace Ucenje
             Console.WriteLine(Tip4(niz));
 
             
+            
 
         }
             static void Tip1(/*Ovdje dođu parametri ili ne */) // void je oznaka ne vraća vrijednost
@@ -71,7 +72,11 @@ namespace Ucenje
         }
 
         // Tip 4: Prima parametre i vraća vrijednost
-
+        /// <summary>
+        /// Metoda će za primljeni niz cijelih brojeva vratiti sumu
+        /// </summary>
+        /// <param name="niz">Niz cijelih brojeva</param>
+        /// <returns>Suma primljenih brojeva</returns>
         private static int Tip4(int[]niz)
         {
             int suma = 0;
@@ -83,6 +88,31 @@ namespace Ucenje
 
             
         }
+
+
+        //NAMA BITNE METODE
+        //Write once , use everywhere
+
+        public static int UcitajCijeliBroj(string poruka)
+        {
+            while (true)
+            {
+                Console.Write(poruka);
+                try
+                {
+                    return int.Parse(Console.ReadLine());
+                }
+                catch 
+                {
+                    Console.WriteLine("Problem kod učitanja broja!");                    
+                }
+            }
+
+
+
+            //return 0;  // kasnije obrisati sluzi da se ne pokazuje greška
+        }
+
 
 
     }
