@@ -102,15 +102,30 @@ namespace Ucenje
                 {
                     return int.Parse(Console.ReadLine());
                 }
-                catch 
+                catch
                 {
-                    Console.WriteLine("Problem kod učitanja broja!");                    
+                    Console.WriteLine("Problem kod učitanja broja!");
                 }
-            }
+        }           
 
-
+            
 
             //return 0;  // kasnije obrisati sluzi da se ne pokazuje greška
+            }
+        public static string UcitajString(string poruka)
+        {
+            string s = "";
+            while (true)
+            {
+                Console.WriteLine(poruka);
+                s += Console.ReadLine().Trim();
+                if(s.Length == 0)
+                {
+                    Console.WriteLine("Obavezan unos");
+                    continue;
+                }
+                return s;
+            }
         }
 
 
