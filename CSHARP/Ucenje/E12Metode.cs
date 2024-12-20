@@ -137,6 +137,31 @@ namespace Ucenje
 
            // return 0; // kasnije obrisati
         }
+        public static int UcitajCijeliBroj(string poruka,int min,int max)
+        {
+            int i;
+            while (true)
+            {
+                Console.Write(poruka);
+                try
+                {
+                    i = int.Parse(Console.ReadLine());
+                    if(i<min || i > max)
+                    {
+                        Console.WriteLine("Broj nije u danom rasponu {0} - {1}!",min,max);
+                        continue;
+                    }
+                    return i;
+                }
+                catch
+                {
+                    Console.WriteLine("Problem kod učitanja broja!");
+                }
+            }
+
+
+            // return 0; // kasnije obrisati
+        }
 
         public static string UcitajString(string poruka)
         {
