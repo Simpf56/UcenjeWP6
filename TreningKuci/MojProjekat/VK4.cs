@@ -26,52 +26,59 @@ namespace MojProjekat
             int stup = stupci -1;
             int red = redovi - 1;
             int vrijednost = 0;
+            int max_vrijednost = redovi * stupci;
 
-            for (stup = stupci -1;stup >= 0; stup--)
-            {
-                tablica[red, stup] = vrijednost++;
-            }
+            Console.WriteLine();
 
-            for(red=redovi -2;red >= 0; red--)
+            while (vrijednost < max_vrijednost )
             {
-                tablica[red, 0] = vrijednost++;
-            }
 
-            for(stup = stupci/stupci;stup < stupci; stup++)
-            {
-                tablica[0, stup] = vrijednost++;
+                // dolje desno prema lijevo
+                for (stup = stupci - 1; stup >= 0; stup--)
+                {
+                    tablica[red, stup] = vrijednost++;
+                }
+                // dolje lijevo prema gore
+                for (red = redovi - 2; red >= 0; red--)
+                {
+                    tablica[red, 0] = vrijednost++;
+                }
+                // gore lijevo prema desno
+                for (stup = 1; stup < stupci; stup++)
+                {
+                    tablica[0, stup] = vrijednost++;
+                }
+                // gore desno prema dolje
+                for (red = 1; red < redovi - 1; red++)
+                {
+                    tablica[red, stupci - 1] = vrijednost++;
+                }
+                // dolje desno -1 prema lijevo 
+                for (stup = stupci - 2; stup >= 1; stup--)
+                {
+                    tablica[red - 1, stup] = vrijednost++;
+                }
+                // dolje lijevo -1 prema gore
+                for (red = redovi - 3; red >= 1; red--)
+                {
+                    tablica[red, stup + 1] = vrijednost++;
+                }
+                // gore lijevo prema desno -2
+                for (stup = 1; stup < stupci - 2; stup++)
+                {
+                    tablica[red + 1, stup + 1] = vrijednost++;
+                }
+                // gore desno prema dolje
+                for (red = redovi - 3; red <= 2; red++)
+                {
+                    tablica[redovi / 2, stup] = vrijednost++;
+                }
+                // dolje desno prema lijevo
+                for (stup = stupci / 2 + 1; stup <= stupci / 2 + 1; stup++)
+                {
+                    tablica[redovi / 2, stupci / 2] = vrijednost++;
+                }
             }
-
-            for (red = redovi / redovi; red < redovi -1; red++)
-            {
-                tablica[red, stupci-1] = vrijednost++;
-            }
-
-            for (stup = stupci / 2 + 1; stup >= 1; stup--)
-            {
-                tablica[red - 1, stup] = vrijednost++;
-            }
-
-            for(red = redovi-3;red >= 1;red--)
-            {
-                tablica[red,stup+1]= vrijednost++;
-            }
-
-            for (stup = 1; stup < 3; stup++)
-            {
-                tablica[red+1,stup+ 1] = vrijednost++;
-            }
-            
-            for (red = redovi / 2; red == 2; red++)
-            {
-                tablica[redovi/2,stup] = vrijednost++;
-            }
-
-            for (stup = stupci / 2 + 1; stup == stupci / 2 + 1; stup++)
-            {
-                tablica[redovi/2,stupci/2] = vrijednost++;
-            }
-
 
 
 
