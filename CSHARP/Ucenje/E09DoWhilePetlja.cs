@@ -8,14 +8,12 @@ namespace Ucenje
 {
     internal class E09DoWhilePetlja
     {
+
         public static void Izvedi()
         {
-            //Console.WriteLine("Hello");
+            //Console.WriteLine("E09");
 
-
-
-            // provjera uvijeta je na kraju petlje i obavezno je jednom izvodi
-
+            // provjera uvjeta je na kraju petlje i obavezno je jednom izvodi
 
             do
             {
@@ -26,34 +24,16 @@ namespace Ucenje
             // zbroj prvih 100 brojeva
 
             int i = 1, suma = 0;
-
-
             do
             {
                 suma += i;
-            } while (++i <= 100);
+            }while (++i<=100);
 
             Console.WriteLine(suma);
             // sve ostalo vrijedi kao i za for i while
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
+
     }
 }

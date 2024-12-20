@@ -8,16 +8,16 @@ namespace Ucenje
 {
     internal class E10ForeachPetlja
     {
+
         public static void Izvedi()
         {
             //Console.WriteLine("E10");
-
 
             Console.Write("Unesi ime svog grada: ");
 
             string grad = Console.ReadLine();
 
-            Console.Write("grad");
+            Console.WriteLine(grad);
 
             // string je zapravo niz znakova char[]
             // za Osijek 
@@ -33,43 +33,34 @@ namespace Ucenje
             {
                 Console.Write(znakoviGrad[i]);
             }
-
             Console.WriteLine();
 
-            for(int i = 0;i < grad.Length; i++)
+            for(int i = 0;i<grad.Length; i++)
             {
-                Console.WriteLine(grad[i]);
+                Console.Write(grad[i]);
             }
-
             Console.WriteLine();
 
-            // često se šečemo od početka do kraja
-            foreach(char znak in znakoviGrad)
+            // često se šećemo od početka do kraja
+            foreach (char znak in znakoviGrad)
             {
                 Console.Write(znak);
             }
-
             Console.WriteLine();
 
             foreach (char c in grad)
             {
                 Console.Write(c);
             }
-
             Console.WriteLine();
 
             // ispiši uneseni grad unazad
-            // Valpovo ovoplaV
+            // Valpovo   ovoplav
 
-            for(int i = grad.Length -1; i >= 0; i--)
+            for(int i = grad.Length - 1; i >= 0; i--)
             {
                 Console.Write(grad[i]);
             }
-
-
-
-
-
 
 
         }

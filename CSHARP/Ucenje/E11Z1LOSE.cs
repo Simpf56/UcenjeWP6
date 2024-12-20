@@ -8,30 +8,31 @@ namespace Ucenje
 {
     internal class E11Z1LOSE
     {
+        // Program unosi dva cijela broja i ispisuje njihov zbroj
+        // Program mora biti "neprobojan"
+
         public static void Izvedi()
         {
-            //Console.WriteLine("E11");
-
-
             int broj1, broj2;
 
             while (true)
             {
-                Console.WriteLine("Unesi prvi broj: " );
+                Console.Write("Unesi prvi broj: ");
                 try
                 {
-                    broj1 = int.Parse( Console.ReadLine() );
+                    broj1 = int.Parse(Console.ReadLine());
                     break;
                 }
                 catch 
                 {
                     Console.WriteLine("Nisi unio broj");
-                    
                 }
             }
+
+
             while (true)
             {
-                Console.WriteLine("Unesi drugi broj: ");
+                Console.Write("Unesi drugi broj: ");
                 try
                 {
                     broj2 = int.Parse(Console.ReadLine());
@@ -40,10 +41,13 @@ namespace Ucenje
                 catch
                 {
                     Console.WriteLine("Nisi unio broj");
-
                 }
             }
-            Console.WriteLine("{0} + {1} = {2}",broj1,broj2, broj1+broj2);
+
+            Console.WriteLine("{0} + {1} = {2}", broj1,broj2, broj1+broj2);
+
+
         }
+
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,144 +25,125 @@ namespace Ucenje
             Console.WriteLine("Osijek");
             Console.WriteLine("Osijek");
             Console.WriteLine("Osijek");
-
+            
             // unaprijed
-            for (int i = 0; i < 10; i++)
+            for(int i = 0; i < 10; i++)
             {
-                Console.WriteLine("{0}Osijek iz petlje",i);
+                Console.WriteLine("{0}. Osijek iz petlje",i);
             }
-            // unazad
-            for (int i = 10;i > 0; i--)
+
+            //unazad
+            for(int i = 10; i>0; i--)
             {
-                Console.WriteLine("{0}.Unazad",i);
+                Console.WriteLine("{0}. Unazad", i);
             }
 
             //ugnježđena petlja
-            for(int i = 1;i<= 10;i++)
+            for(int i = 1; i <= 10; i++)
             {
-                for(int j = 1;j <= 10; j++)
+                for(int j = 1; j <= 10; j++)
                 {
-                    Console.Write("\t{0,3}",i * j); // Domaca zadaca formatirati desno, formatiro da se pomakne 3 mjesta desno
-                 }
+                    Console.Write("\t{0}", i * j);
+                }
                 Console.WriteLine();
             }
 
+            // DZ lipo formatirati brojeve prema desno
+
+
+            // koliko je zbroj prvih 100 brojeva?
             int sum = 0;
-            for(int i = 1;i<= 100; i++)
+            for(int i = 1; i <= 100; i++)
             {
-                sum += i; // postojecoj sumi dajem vrijednost i
+                sum += i; //postojećoj sumi dodajem vrijednost i
             }
             Console.WriteLine(sum);
             int x = 100;
             Console.WriteLine((x+1)*x/2);
 
-            for (int i = 1; i <= 20; i++)
+
+            // Ispiši sve parne brojeve od 1 do 20
+            for(int i = 1; i <= 20; i++)
             {
                 if (i % 2 == 0)
                 {
-                    if (i < 20)
-                    {
-                        //Console.WriteLine();
-                        Console.Write("{0},", i);
-                    }
-                    else
-                    {
-                        Console.Write(i);
-                    }
+                    //Console.WriteLine(i);
+                    Console.Write("{0},",i);
                 }
-            }                       // nema tocke nakon zareza
+            }
+            // DZ: Maknuti zadnji zarez
 
             Console.WriteLine();
-            int idiOd = 12;
+            int idiOd = 12; //ovo može unijeti korisnik
             int idiDo = 34;
 
+            // ovako u konačnici mora izgledati kod: bez fiksnih vrijednosti
             for(int i = idiOd; i <= idiDo; i++)
             {
                 Console.WriteLine(i);
             }
 
-            int[] brojevi = { 1, 2, 3, 3, 2, 3, 3, 3, 4, 3, 3};
 
-            for(int i = 0;i < brojevi.Length; i++)
+            int[] brojevi = { 1, 2, 3, 3, 2, 3, 3, 3, 4, 3, 3 };
+
+            //ispisati sve brojeve iz niza
+            for(int i = 0; i < brojevi.Length; i++)
             {
-                Console.Write(brojevi[i]);
+                Console.WriteLine(brojevi[i]);
             }
-            Console.WriteLine();
 
-            int[,] tablica = 
+
+            int[,] tablica =
             {
-                 { 1, 2, 3 },
-                 { 4, 5, 6 },
-                 { 6, 7, 8 },
+                {1,2,3 },
+                {4,5,6 },
+                {7,8,9 }
             };
 
-
-            for(int i = 0;i< tablica.GetLength(0); i++)
+            for(int i = 0; i < tablica.GetLength(0); i++) // X dimenzija GetLength(0)
             {
-                for(int j = 0;j < tablica.GetLength(1); j++)
+                for(int j=0;j<tablica.GetLength(1); j++) // Y dimenzija GetLength(1)
                 {
                     Console.Write(tablica[i,j] + " ");
                 }
                 Console.WriteLine();
             }
 
-            for (int i = 0;i < 10; i++)
+            // petlju se može preskočiti (nastaviti) i nasilno prekinuti
+            for(int i = 0; i < 10; i++)
             {
-                if(i == 3)
+                if (i == 3)
                 {
                     continue;
                 }
-                
-                if(i == 7)
+
+                if (i == 7)
                 {
                     break;
                 }
 
                 Console.WriteLine(i);
+
             }
 
-            // dz  saznati kako prekinuti ugnježđenu petlju (iz najdublje vanjsku)
+            // DZ: saznati kako prekinuti ugnježđenu petlju (iz najdublje vanjsku)
 
-            bool izadji = false; // postavljajuci flag varijablu ili return na kraju
-
-            for(int i = 0; i < 3; i++)
+            // kako postići beskonačnu petlju
+            // OVO NIJE BESKONAČNA PETLJA
+            for(int i = 0; i >= 0; i++)
             {
                 Console.WriteLine(i);
-                for (int j = 0;j < 3; j++)
-                {
-                    
-                        if (j == 2)
-                        {
-                            Console.WriteLine(j);
-                            izadji = true;
-                            break;
-                        }
-                 
-                }
+                break;
             }
 
 
-            
-            
-
-
-
-                                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            // beskonačna petlja
+            for(; ; )
+            {
+                Console.WriteLine(new Random().NextInt64() +"" + new Random().NextInt64() + "" + new Random().NextInt64());
+                Thread.Sleep(300);
+                break; //ovo maknuti ako hoćemo beskonačni prikaz brojeva
+            }
 
 
         }
