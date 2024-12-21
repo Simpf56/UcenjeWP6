@@ -70,6 +70,7 @@ namespace Ucenje
             NaslovPrograma("Za uneseni naziv mjesta ispisuje koliko ima znakova");
             string ime = E12Metode.UcitajString("Unesi ime mjesta: ");
             Console.WriteLine(ime.Length);
+            //Console.WriteLine(E12Metode.UcitajString("Unesi ime grada: ").Length);
         }
 
         private static void JedinicnaVrijednost()
