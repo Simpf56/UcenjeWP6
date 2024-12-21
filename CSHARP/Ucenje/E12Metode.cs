@@ -181,8 +181,10 @@ namespace Ucenje
            // return "";
         }
 
-
-
-
-    }
+        public static bool UcitajBool(string poruka, string uvjetZaTrue)
+        {
+            Console.WriteLine(poruka);
+            return Console.ReadLine().Trim().ToUpper() == uvjetZaTrue.ToUpper();
+        }
+    }    
 }

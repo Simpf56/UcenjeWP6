@@ -12,11 +12,42 @@ namespace Ucenje
 
     internal class E10Z1
     {
-     
+
         //abbi
         //kisik
         //anavolimilovana
         //amenetuniminutenema
+
+        public static void Izvedi()
+        {
+            Console.WriteLine("palindrom");
+
+            string izraz = E12Metode.UcitajString("Unesi izraz za provjeru palindrom: ");
+
+            bool palindrom = true;
+            //izraz = izraz.ToUpper();
+            //ispisi prvo slovo
+            Console.WriteLine(izraz[0]); // i=0
+            //ispisati zadnje slovo
+            Console.WriteLine(izraz[izraz.Length-1-0]); //i = 0
+
+            //ispisi drugo slovo
+            Console.WriteLine(izraz[1]); // i = 1
+            //ispisi predzadnje slovo
+            Console.WriteLine(izraz[izraz.Length-1-1]);
+            for(int i = 0; i < izraz.Length/2; i++)
+            {
+               if (izraz[i] != izraz[izraz.Length - 1-i])
+                {
+                    palindrom = false;
+                    break;
+                }
+            }
+
+            Console.WriteLine("Izraz {0} {1} palindrom",izraz.ToUpper(),palindrom? "JE" : "NIJE");
+
+        }
+
     }
 
 }
