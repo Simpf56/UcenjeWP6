@@ -21,10 +21,10 @@ namespace MojProjekat
             int vrijednost = 0;
             int max_vrijednost = redovi * stupci;
 
-            int gornjaGranica = 0;
-            int donjaGranica = redovi - 1;
-            int lijevaGranica = 0;
             int desnaGranica = stupci - 1;
+            int donjaGranica = redovi - 1;
+            int gornjaGranica = 0;
+            int lijevaGranica = 0;
 
 
             while (vrijednost < max_vrijednost)
