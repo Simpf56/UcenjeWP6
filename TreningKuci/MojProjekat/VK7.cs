@@ -54,16 +54,17 @@ namespace MojProjekat
                 }
                 desnaGranica--;
             }
-
+            // ispis tablice
             for(int redak = 0; redak < redovi; redak++)
             {
                 for(int stup = 0; stup < stupci; stup++)
                 {
-                    Console.Write(string.Format("{0,5}",tablica[redak,stup])+ "\t");
+                    Console.Write(string.Format("{0,4}",tablica[redak,stup])+ "\t");
                 }
                 Console.WriteLine();
             }
         }
+        //metoda za tocan broj redaka
         public static int UcitajBrojRedaka(string poruka)
         {
             while (true)
@@ -88,6 +89,7 @@ namespace MojProjekat
                 }
             }
         }
+        //metoda za tocan broj stupaca
         public static int UcitajBrojStupaca(string poruka)
         {
             while (true)
