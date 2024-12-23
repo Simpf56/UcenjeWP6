@@ -21,7 +21,9 @@ using MojProjekat;
 //VK2.VjezbaKuci();
 //VK3.VjezbaKuci();
 //VK4.VjezbaKuci();
-VK5.VjezbaKuci();
+//VK5.VjezbaKuci();
+//VK6.VjezbaKuci();
+VK7.VjezbaKuci();
 
 
 
