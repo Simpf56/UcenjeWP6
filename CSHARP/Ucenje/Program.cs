@@ -1,15 +1,20 @@
 ﻿
 
 using Ucenje;
+
+
+
+//E14Vjezbanje.Izvedi();
+
 //E15Subota.Izvedi();
 
-E14Vjezbanje.Izvedi();
+//E14Vjezbanje.Izvedi();
 
 //E13Z2.Izvedi();
 
 //E13Z1.Izvedi();
 
-//E13Rekurzija.Izvedi();
+E13Rekurzija.Izvedi();
 
 
 //E12Z1.Izvedi();

@@ -20,31 +20,34 @@ namespace Ucenje
 
         public static void Izvedi()
         {
-            Console.WriteLine("palindrom");
 
-            string izraz = E12Metode.UcitajString("Unesi izraz za provjeru palindrom: ");
+            string s = "RužanEdoodenažur";
+            Console.WriteLine(string.Join(';',s.ToCharArray()));
+
+            Console.WriteLine("palindrom");
+            string izraz = E12Metode.UcitajString("Unesi izraz za provjeru palindroma: ");
 
             bool palindrom = true;
-            //izraz = izraz.ToUpper();
-            //ispisi prvo slovo
+            izraz = izraz.ToUpper() ;
+            //ispiši prvo slovo
             Console.WriteLine(izraz[0]); // i=0
             //ispisati zadnje slovo
-            Console.WriteLine(izraz[izraz.Length-1-0]); //i = 0
+            Console.WriteLine(izraz[izraz.Length-1-0]); // i=0
 
-            //ispisi drugo slovo
-            Console.WriteLine(izraz[1]); // i = 1
-            //ispisi predzadnje slovo
-            Console.WriteLine(izraz[izraz.Length-1-1]);
-            for(int i = 0; i < izraz.Length/2; i++)
+            // ispiši drugo slovo
+            Console.WriteLine(izraz[1]); // i=1
+            //ispiši predzadnje slovo
+            Console.WriteLine(izraz[izraz.Length-1-1]); // i=1
+            for (int i = 0; i < izraz.Length/2; i++)
             {
-               if (izraz[i] != izraz[izraz.Length - 1-i])
+                if (izraz[i] != izraz[izraz.Length- 1 - i])
                 {
                     palindrom = false;
                     break;
                 }
             }
 
-            Console.WriteLine("Izraz {0} {1} palindrom",izraz.ToUpper(),palindrom? "JE" : "NIJE");
+            Console.WriteLine("Izraz {0} {1} palindrom", izraz, palindrom ? "JE" : "NIJE");
 
         }
 

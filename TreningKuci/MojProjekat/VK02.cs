@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace MojProjekat
 {
-    internal class VK2
+    internal class VK02
     {
         public static void VjezbaKuci()
         {

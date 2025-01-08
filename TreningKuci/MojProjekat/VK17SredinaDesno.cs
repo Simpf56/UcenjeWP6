@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ucenje
+namespace MojProjekat
 {
-    internal class E17Zimskizadaci
+    internal class VK17SredinaDesno
     {
     }
 }

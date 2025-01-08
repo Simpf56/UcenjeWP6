@@ -137,7 +137,11 @@ namespace Ucenje
 
            // return 0; // kasnije obrisati
         }
-        public static int UcitajCijeliBroj(string poruka,int min,int max)
+
+
+
+
+        public static int UcitajCijeliBroj(string poruka, int min, int max)
         {
             int i;
             while (true)
@@ -148,7 +152,7 @@ namespace Ucenje
                     i = int.Parse(Console.ReadLine());
                     if(i<min || i > max)
                     {
-                        Console.WriteLine("Broj nije u danom rasponu {0} - {1}!",min,max);
+                        Console.WriteLine("Broj nije u danom rasponu {0} - {1}",min,max);
                         continue;
                     }
                     return i;
@@ -162,6 +166,11 @@ namespace Ucenje
 
             // return 0; // kasnije obrisati
         }
+
+
+
+
+
 
         public static string UcitajString(string poruka)
         {
@@ -181,10 +190,16 @@ namespace Ucenje
            // return "";
         }
 
+
+
         public static bool UcitajBool(string poruka, string uvjetZaTrue)
         {
-            Console.WriteLine(poruka);
-            return Console.ReadLine().Trim().ToUpper() == uvjetZaTrue.ToUpper();
+            Console.Write(poruka);
+            return Console.ReadLine().Trim().ToUpper()==uvjetZaTrue.ToUpper();
         }
-    }    
+
+
+
+
+    }
 }

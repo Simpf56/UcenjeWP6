@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MojProjekat
 {
-    internal class VK4
+    internal class VK04
     {
         public static void VjezbaKuci()
         {
