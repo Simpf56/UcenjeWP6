@@ -102,23 +102,80 @@ namespace MojProjekat
 
         private static void PretvorbaTemp()
         {
-            throw new NotImplementedException();
+            string odgovor;
+            NaslovPrograma("Program koji za unesenu temperaturu u Celziusima mjenja u Fahrenheite i obrnuto ");
+
+            do {
+                switch (UcitajCijeliBroj("Odaberi koju temperaturu želiš promijeniti(0 za °C u °F, 1 za °F u °C): ", 0, 1))
+                {
+                    case 0:
+                        double celz = UcitajDoubleBroj("Unesi temperaturu u Celzijusima: ", -50,110);
+                        double fahrenheit = CelzToFarenheit(celz);
+                        Console.WriteLine("Temperatura u Fahrenheitu: {0:F2}°F", fahrenheit);
+                        break;
+                    case 1:
+                        double fahr = UcitajDoubleBroj("Unesi temperaturu u Fahrenheitima: ", -50,230);
+                        double celzijus = FahrenheitToCelz(fahr);
+                        Console.WriteLine("Temperatura u Celzijusima: {0:F2}°C", celzijus);
+                        break;
+                }
+                odgovor = Ponavljanja();
+
+            } while(odgovor == "DA");
+        }
+
+        private static double FahrenheitToCelz(double temperatura)
+        {
+            return (temperatura - 32) * 5 / 9;
+        }
+
+        private static double CelzToFarenheit(double temperatura)
+        {
+            return (temperatura * 9 / 5) + 32;
         }
 
         private static void BrojanjeSamoglasnika()
         {
-            throw new NotImplementedException();
+            string odgovor;
+            NaslovPrograma("Program koji ispisuje broj samoglasnika u stringu");
+
+            do
+            {
+
+                string unos = UcitajString("Upiši izraz : ").ToUpper();
+                char[] izraz = unos.ToCharArray();
+                int samoglasnici = 0;
+                foreach(char slovo in izraz)
+                {
+                    if (slovo == 'A' || slovo == 'E' || slovo == 'I' || slovo == 'O' || slovo == 'U')
+                    {
+                        samoglasnici++;                        
+                    }
+                    
+                }
+                Console.WriteLine("Broj samoglasnika je: {0}.",samoglasnici);
+
+                odgovor = Ponavljanja();
+
+            } while (odgovor == "DA");
+
         }
 
         private static void PreokretStringa()
         {
-            NaslovPrograma("Program koji ispisuje napisani izraz odpozadi.");
+            string odgovor;
+            NaslovPrograma("Program koji ispisuje napisani string otpozadi.");
+            do
+            {
             string izraz = UcitajString("Upiši izraz: ");
 
             for (int i = izraz.Length -1; i >= 0; i--)
             {
                 Console.Write(izraz[i]);
-            }          
+            }
+                Console.WriteLine();
+                odgovor = Ponavljanja();
+            } while (odgovor == "DA");
         }
 
         private static void IspisFibNiza()
@@ -138,15 +195,7 @@ namespace MojProjekat
                     a = b;
                     b = sljedeci;
                 }
-                do
-                {
-                    Console.WriteLine("Želiš li probati opet? (DA/NE)");
-                    odgovor = Console.ReadLine().ToUpper();
-                    if (odgovor != "DA" && odgovor != "NE")
-                    {
-                        Console.WriteLine("To nije opcija.");
-                    }
-                } while (odgovor != "DA" && odgovor != "NE");
+                odgovor = Ponavljanja();
             } while (odgovor == "DA");
 
         }
@@ -256,15 +305,7 @@ namespace MojProjekat
                 {
                     Console.WriteLine("Broj je 0");
                 }
-                do
-                {
-                    Console.WriteLine("Želiš li probati opet? (DA/NE)");
-                    odgovor = Console.ReadLine().ToUpper();
-                    if (odgovor != "DA" && odgovor != "NE")
-                    {
-                        Console.WriteLine("To nije opcija.");
-                    }
-                } while (odgovor != "DA" && odgovor != "NE");
+                odgovor = Ponavljanja();
             } while (odgovor == "DA");
         }
         private static void PovrsinaPravokutnika()
@@ -277,15 +318,8 @@ namespace MojProjekat
                 int duzinaB = CijeliBroj("Upiši dužinu stranice B pravokutnika: ");
                 Console.WriteLine();
                 Console.WriteLine("Površina vašeg pravokutnika je {0} cm².", (duzinaA * duzinaB));
-                do
-                {
-                    Console.WriteLine("Želiš li probati opet? (DA/NE)");
-                    odgovor = Console.ReadLine().ToUpper();
-                    if (odgovor != "DA" && odgovor != "NE")
-                    {
-                        Console.WriteLine("To nije opcija.");
-                    }
-                } while (odgovor != "DA" && odgovor != "NE");
+
+                odgovor = Ponavljanja();
             } while (odgovor == "DA");
         }
 
@@ -358,7 +392,7 @@ namespace MojProjekat
                 }
             }
         }
-        private static string PitanjePonavljanja()
+        private static string Ponavljanja()
         {
             string odgovor;
             do
@@ -390,6 +424,28 @@ namespace MojProjekat
             }
 
             // return "";
+        }
+        private static double UcitajDoubleBroj(string poruka, double min, double max)
+        {
+            double i;
+            while (true)
+            {
+                Console.Write(poruka);
+                try
+                {                    
+                    i = double.Parse(Console.ReadLine());
+                    if (i < min || i > max)
+                    {
+                        Console.WriteLine("Broj nije u danom rasponu {0} - {1}", min, max);
+                        continue;
+                    }
+                    return i;
+                }
+                catch
+                {
+                    Console.WriteLine("Problem kod učitanja broja!");
+                }
+            }
         }
     }
 }

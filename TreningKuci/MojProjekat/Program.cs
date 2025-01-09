@@ -24,7 +24,7 @@ using MojProjekat;
 //VK05.VjezbaKuci();
 //VK06.VjezbaKuci();
 //VK07CiklicnaTablica.VjezbaKuci();
-VK08PocinjeOdBroja.VjezbaKuci();
+//VK08PocinjeOdBroja.VjezbaKuci();
 //VK09PocinjeLijevoDolje.VjezbaKuci();
 //VK10PocinjeGoreLijevo.VjezbaKuci();
 //VK11PocinjeLijevoDolje.VjezbaKuci();
@@ -36,7 +36,7 @@ VK08PocinjeOdBroja.VjezbaKuci();
 //VK17SredinaDesno.VjezbaKuci();
 //VK18SredinaGore.VjezbaKuci();
 //VK19SredinaDolje.VjezbaKuci();
-//ZimskiProgram.Izvedi();
+ZimskiProgram.Izvedi();
 
 
 
