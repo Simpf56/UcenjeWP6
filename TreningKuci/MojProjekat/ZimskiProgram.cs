@@ -97,7 +97,17 @@ namespace MojProjekat
 
         private static void SortiranjeNiza()
         {
-            throw new NotImplementedException();
+            int unos = UcitajCijeliBroj("Upiši dužinu niza: ",int.MinValue,int.MaxValue);
+            int[] niz = new int[unos];
+
+            Console.WriteLine("Unesi brojeve: ");
+            for(int i = 0; i < niz.Length; i++)
+            {
+                niz[i] = int.Parse(Console.ReadLine());
+            }
+
+
+            
         }
 
         private static void PretvorbaTemp()
