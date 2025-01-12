@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace MojProjekat
@@ -27,7 +28,8 @@ namespace MojProjekat
             "Brojanje samoglasnika",
             "Pretvorba temperature",
             "Sortiranje niza",
-            "Kalkulator"
+            "Kalkulator",
+            "Generator Lozinke"
             };
 
             Console.WriteLine();
@@ -87,27 +89,101 @@ namespace MojProjekat
                     Kalkulator();
                     Izbornik();
                     break;
+                case 11:
+                    GeneratorLozinke();
+                    Izbornik();
+                    break;
             }
+        }
+
+        private static void GeneratorLozinke()
+        {
+            string Lozinka;
+            string[] Sifra;
+
         }
 
         private static void Kalkulator()
         {
-            throw new NotImplementedException();
+            string odgovor;
+            NaslovPrograma("Program koji daje 4 opcije za računanje.");
+
+            do
+            {
+                double broj1 = UcitajDoubleBroj("Upiši prvi broj ", double.MinValue, double.MaxValue);
+                double broj2 = UcitajDoubleBroj("Upiši drugi broj ", double.MinValue, double.MaxValue);
+
+                string znak = UcitajZnak("Odaberi opciju: ");
+                double rezultat;
+
+                if (znak == "+")
+                {
+                    rezultat = broj1 + broj2;
+                    Console.WriteLine("Rezultat je : {0:F2}", rezultat);
+                }
+                if (znak == "-")
+                {
+                    rezultat = broj1 - broj2;
+                    Console.WriteLine("Rezultat je : {0:F2}", rezultat);
+                }
+                if (znak == "*")
+                {
+                    rezultat = broj1 * broj2;
+                    Console.WriteLine("Rezultat je : {0:F2}", rezultat);
+                }
+                if (znak == "/")
+                {
+                    rezultat = broj1 / broj2;
+                    Console.WriteLine("Rezultat je : {0:F2}", rezultat);
+                }
+                Console.WriteLine();
+                odgovor = Ponavljanja();
+            } while (odgovor == "DA");
         }
 
         private static void SortiranjeNiza()
         {
-            int unos = UcitajCijeliBroj("Upiši dužinu niza: ",int.MinValue,int.MaxValue);
-            int[] niz = new int[unos];
+            string odgovor;
+            NaslovPrograma("Program koji sortira niz upisanih brojeva.");
 
-            Console.WriteLine("Unesi brojeve: ");
-            for(int i = 0; i < niz.Length; i++)
+            do
             {
-                niz[i] = int.Parse(Console.ReadLine());
+                int brojevi = UcitajCijeliBroj("Upiši dužinu niza: ", int.MinValue, int.MaxValue);
+                int[] niz = new int[brojevi];
+
+                Console.WriteLine("Unesi brojeve: ");
+                for (int i = 0; i < niz.Length; i++)
+                {
+                    niz[i] = UcitajCijeliBroj("Dodaj broj: ", -100, 100);
+                }
+
+                SortirajNiz(niz);
+
+                foreach (int broj in niz)
+                {
+                    Console.Write(broj + " ");
+                }
+                Console.WriteLine();
+                odgovor = Ponavljanja();
+            } while (odgovor == "DA");
+        }
+
+        private static void SortirajNiz(int[] niz)
+        {
+            int trenutniBr;
+
+            for (int i = 0; i < niz.Length; i++)
+            {
+                for (int j = 0; j < niz.Length - i - 1; j++)
+                {
+                    if (niz[j] > niz[j + 1])
+                    {
+                        trenutniBr = niz[j];
+                        niz[j] = niz[j + 1];
+                        niz[j + 1] = trenutniBr;
+                    }
+                }
             }
-
-
-            
         }
 
         private static void PretvorbaTemp()
@@ -115,23 +191,24 @@ namespace MojProjekat
             string odgovor;
             NaslovPrograma("Program koji za unesenu temperaturu u Celziusima mjenja u Fahrenheite i obrnuto ");
 
-            do {
+            do
+            {
                 switch (UcitajCijeliBroj("Odaberi koju temperaturu želiš promijeniti(0 za °C u °F, 1 za °F u °C): ", 0, 1))
                 {
                     case 0:
-                        double celz = UcitajDoubleBroj("Unesi temperaturu u Celzijusima: ", -50,110);
+                        double celz = UcitajDoubleBroj("Unesi temperaturu u Celzijusima: ", -50, 110);
                         double fahrenheit = CelzToFarenheit(celz);
                         Console.WriteLine("Temperatura u Fahrenheitu: {0:F2}°F", fahrenheit);
                         break;
                     case 1:
-                        double fahr = UcitajDoubleBroj("Unesi temperaturu u Fahrenheitima: ", -50,230);
+                        double fahr = UcitajDoubleBroj("Unesi temperaturu u Fahrenheitima: ", -50, 230);
                         double celzijus = FahrenheitToCelz(fahr);
                         Console.WriteLine("Temperatura u Celzijusima: {0:F2}°C", celzijus);
                         break;
                 }
                 odgovor = Ponavljanja();
 
-            } while(odgovor == "DA");
+            } while (odgovor == "DA");
         }
 
         private static double FahrenheitToCelz(double temperatura)
@@ -155,15 +232,15 @@ namespace MojProjekat
                 string unos = UcitajString("Upiši izraz : ").ToUpper();
                 char[] izraz = unos.ToCharArray();
                 int samoglasnici = 0;
-                foreach(char slovo in izraz)
+                foreach (char slovo in izraz)
                 {
                     if (slovo == 'A' || slovo == 'E' || slovo == 'I' || slovo == 'O' || slovo == 'U')
                     {
-                        samoglasnici++;                        
+                        samoglasnici++;
                     }
-                    
+
                 }
-                Console.WriteLine("Broj samoglasnika je: {0}.",samoglasnici);
+                Console.WriteLine("Broj samoglasnika je: {0}.", samoglasnici);
 
                 odgovor = Ponavljanja();
 
@@ -177,12 +254,12 @@ namespace MojProjekat
             NaslovPrograma("Program koji ispisuje napisani string otpozadi.");
             do
             {
-            string izraz = UcitajString("Upiši izraz: ");
+                string izraz = UcitajString("Upiši izraz: ");
 
-            for (int i = izraz.Length -1; i >= 0; i--)
-            {
-                Console.Write(izraz[i]);
-            }
+                for (int i = izraz.Length - 1; i >= 0; i--)
+                {
+                    Console.Write(izraz[i]);
+                }
                 Console.WriteLine();
                 odgovor = Ponavljanja();
             } while (odgovor == "DA");
@@ -194,7 +271,7 @@ namespace MojProjekat
             NaslovPrograma("Program koji ispisuje Fibonnacijev niz do zadanog N broja.");
             do
             {
-                int broj = UcitajCijeliBroj("Upiši broj: ",1,50);
+                int broj = UcitajCijeliBroj("Upiši broj: ", 1, 50);
                 int a = 0;
                 int b = 1;
 
@@ -214,8 +291,8 @@ namespace MojProjekat
         {
             int skupOcjena = CijeliBroj("Upiši broj predmeta? : ");
             int[] ocjene = new int[skupOcjena];
-            
-            for (int i = 0;i < skupOcjena; i++)
+
+            for (int i = 0; i < skupOcjena; i++)
             {
                 bool ispravanUnos = false;
                 while (!ispravanUnos)
@@ -225,11 +302,11 @@ namespace MojProjekat
                     string unos = Console.ReadLine();
                     try
                     {
-                       int ocjena = int.Parse(unos);
-                        if(ocjena >= 1 &&  ocjena <= 5)
+                        int ocjena = int.Parse(unos);
+                        if (ocjena >= 1 && ocjena <= 5)
                         {
                             ocjene[i] = ocjena;
-                        ispravanUnos = true;
+                            ispravanUnos = true;
                         }
                         else
                         {
@@ -243,24 +320,24 @@ namespace MojProjekat
                 }
             }
             int sumaOcjena = 0;
-            foreach(int ocjena in ocjene)
+            foreach (int ocjena in ocjene)
             {
                 sumaOcjena += ocjena;
             }
 
-            
+
             double prosjek = (double)sumaOcjena / skupOcjena;
 
             Console.WriteLine($"Prosjek tvojih ocjena je {prosjek:F2}");
-            
+
 
         }
 
         private static void ZbrojElementaNiza()
         {
             NaslovPrograma("Program koji zbraja sve upisane brojeve.");
-            string odgovor;            
-            
+            string odgovor;
+
             int velicinaNiza = CijeliBroj("Koliko brojeva želiš unijeti? ");
             int[] brojevi = new int[velicinaNiza];
 
@@ -279,11 +356,11 @@ namespace MojProjekat
                     }
                     catch
                     {
-                        Console.WriteLine("Unos nije cijeli broj.");                            
+                        Console.WriteLine("Unos nije cijeli broj.");
                     }
                 }
             }
-            
+
             int suma = 0;
             foreach (int broj in brojevi)
             {
@@ -291,9 +368,9 @@ namespace MojProjekat
             }
             Console.WriteLine($"Suma unesenih brojeva je: {suma}");
 
-            
-            
-        }        
+
+
+        }
         private static void ProvjeraBroja()
         {
             NaslovPrograma("Program koji provjerava da li je broj pozitivan,negativan ili 0.");
@@ -320,7 +397,7 @@ namespace MojProjekat
         }
         private static void PovrsinaPravokutnika()
         {
-                NaslovPrograma("Program koji vrši izračun površine pravokutnika.");
+            NaslovPrograma("Program koji vrši izračun površine pravokutnika.");
             string odgovor;
             do
             {
@@ -351,7 +428,7 @@ namespace MojProjekat
         private static int CijeliBroj()
         {
             while (true)
-            {                
+            {
                 try
                 {
                     int broj = int.Parse(Console.ReadLine());
@@ -442,7 +519,7 @@ namespace MojProjekat
             {
                 Console.Write(poruka);
                 try
-                {                    
+                {
                     i = double.Parse(Console.ReadLine());
                     if (i < min || i > max)
                     {
@@ -456,6 +533,25 @@ namespace MojProjekat
                     Console.WriteLine("Problem kod učitanja broja!");
                 }
             }
+        }
+        private static string UcitajZnak(string poruka)
+        {
+            string unos;
+            while(true){
+                Console.WriteLine(poruka);
+
+                unos = Console.ReadLine();
+                if (unos == "+" || unos == "-" || unos == "*" || unos == "/")
+                {
+                    return unos;
+                }
+                else
+                {
+                    Console.WriteLine("To nije opcija.");
+                }
+            }
+                       
+            
         }
     }
 }
