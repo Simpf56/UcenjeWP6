@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ucenje
 {
-    internal class E17ZimskiZadaci
+    internal class E16ZimskiZadaci
     {
 
         // NAPOMENA vezana za AI. Korištenje AI alata je dobrodošli ako Vam pomogne u boljem razumjevanju
