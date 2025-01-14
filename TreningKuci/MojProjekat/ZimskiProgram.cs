@@ -98,10 +98,53 @@ namespace MojProjekat
 
         private static void GeneratorLozinke()
         {
-            string Lozinka;
-            string[] Sifra;
+            NaslovPrograma("Program koji generira lozinke po željama korisnika.");
+
+            bool sadrziVelikaSlova = false;
+            bool sadrziMalaSlova = false;
+            bool sadrziBrojeve = false;
+            bool sadrziZnakove = false;
+            bool sadrziPrviBroj = false;
+            bool sadrziZadnjiBroj = false;
+            bool sadrziPonavljanje = false;
+
+            const string malaSlova = "abcdefghijklmnopqrstuvwxyz";
+            const string brojevi = "0123456789";
+            const string znakovi = "!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
+            const string velikaSlova = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string malaIVelikaSlova = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string malaSlovaIBrojevi = "abcdefghijklmnopqrstuvwxyz0123456789";
+            const string velikaSlovaIBrojevi = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            const string malaVelikaSlovaIBrojevi = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            const string malaSlovaIZnakovi = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
+            const string velikaSlovaIZnakovi = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
+            const string malaSlovaIBrojeviIZnakovi = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
+            const string velikaSlovaIBrojeviIZnakovi = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
+            const string sveZajedno = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
+
+            //int duzinaLozinke = UcitajCijeliBrojL("Unesi dužinu lozinke: ",8,20);
+            int duzinaLozinke = 8;
+
+            string[] Lozinka = new string[duzinaLozinke];
+
+
+            Random random = new Random();
+
+            for (int i = 0; i < Lozinka.Length; i++)
+            {
+                Lozinka[i] = malaSlova[random.Next(malaSlova.Length)].ToString();
+            }
+
+            string generiranaLozinka = string.Join("", Lozinka);
+            Console.WriteLine($"Generirana lozinka: {generiranaLozinka}");
+
+
+
+
+
 
         }
+        
 
         private static void Kalkulator()
         {
@@ -469,6 +512,33 @@ namespace MojProjekat
                     if (i < min || i > max)
                     {
                         Console.WriteLine("Broj nije u danom rasponu {0} - {1}", min, max);
+                        continue;
+                    }
+                    return i;
+                }
+                catch
+                {
+                    Console.WriteLine("Problem kod učitanja broja!");
+                }
+            }
+        }
+        private static int UcitajCijeliBrojL(string poruka, int min, int max)
+        {
+            int i;
+            while (true)
+            {
+                Console.Write(poruka);
+                try
+                {
+                    i = int.Parse(Console.ReadLine());
+                    if (i < min)
+                    {
+                        Console.WriteLine("Lozinka mora sadržavati minimalno 8 znamenki!");
+                        continue;
+                    }
+                    if (i > max)
+                    {
+                        Console.WriteLine("Lozinka nemože sadržavati više od 20 znamkenki!");
                         continue;
                     }
                     return i;
