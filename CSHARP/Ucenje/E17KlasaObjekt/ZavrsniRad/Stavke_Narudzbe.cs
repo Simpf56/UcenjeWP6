@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
-    public class Stavke_Narudzbe
+    internal class Stavke_narudzbe
     {
+        public int sifra { get; set; }
+        public Proizvodi proizvod{ get; set; } = new Proizvodi();
+        public Narudzbe narudzba { get; set; } = new Narudzbe();
+        public int kolicina { get; set; }
+        public decimal? cijena { get; set; }
     }
 }
