@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ucenje.E17KlasaObjekt.zavrsnirad
+namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
-    internal class Stavke_Narudzbe
+    public class Stavke_Narudzbe
     {
     }
 }

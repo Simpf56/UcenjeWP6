@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ucenje.E17KlasaObjekt.zavrsnirad
+namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
-    internal class Nabavljaci
+    public class Nabavljaci
     {
+        public int Sifra { get; set; }
+
     }
 }
