@@ -4,7 +4,8 @@ using Ucenje;
 
 
 // nvoa instanca klase program
-new Ucenje.E17KlasaObjekt.Program();
+new Ucenje.E18NasljedivanjePolimorfizam.Program();
+//new Ucenje.E17KlasaObjekt.Program();
 //E14Vjezbanje.Izvedi();
 
 //E15Subota.Izvedi();
