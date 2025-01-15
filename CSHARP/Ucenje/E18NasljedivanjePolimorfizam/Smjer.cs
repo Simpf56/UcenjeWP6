@@ -14,7 +14,7 @@ namespace Ucenje.E18NasljedivanjePolimorfizam
         {
             return Naziv;
         }
-        // ovo nije bas pametno, naziv ne odreduje 
+        // ovo nije bas pametno, naziv ne odreduje jednoznacno smjer
         public override bool Equals(object? obj)
         {
             return ((Smjer)obj).Naziv.Equals(Naziv);

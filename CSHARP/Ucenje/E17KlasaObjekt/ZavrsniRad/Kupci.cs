@@ -9,10 +9,10 @@ namespace Ucenje.E17KlasaObjekt.ZavrsniRad
     internal class Kupci
     {
         public int sifra { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public string br_tel { get; set; }
-        public string adresa { get; set; } = "";
-        public DateOnly? datum_rod { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string Br_tel { get; set; }
+        public string Adresa { get; set; } = "";
+        public DateOnly? Datum_rod { get; set; }
     }
 }

@@ -8,10 +8,10 @@ namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
     internal class Stavke_narudzbe
     {
-        public int sifra { get; set; }
-        public Proizvodi proizvod{ get; set; } = new Proizvodi();
-        public Narudzbe narudzba { get; set; } = new Narudzbe();
-        public int kolicina { get; set; }
-        public decimal? cijena { get; set; }
+        public int Sifra { get; set; }
+        public Proizvodi Proizvodi{ get; set; } = new Proizvodi();
+        public Narudzbe Narudzbe { get; set; } = new Narudzbe();
+        public int Kolicina { get; set; }
+        public decimal? Cijena { get; set; }
     }
 }

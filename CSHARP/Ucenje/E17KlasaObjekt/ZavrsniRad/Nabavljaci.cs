@@ -8,11 +8,11 @@ namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
     internal class Nabavljaci
     {
-        public int sifra { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public string naziv { get; set; }
-        public string kontakt { get; set; }
-        public string br_tel { get; set; }
+        public int Sifra { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string Naziv { get; set; }
+        public string Kontakt { get; set; }
+        public string Br_tel { get; set; }
     }
 }

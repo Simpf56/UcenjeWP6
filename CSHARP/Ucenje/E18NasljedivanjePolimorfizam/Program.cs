@@ -10,14 +10,16 @@ namespace Ucenje.E18NasljedivanjePolimorfizam
     public class Program
     {
         // konstruktor -> poziva se s kljucnom riješenju
-        public Program()
+        public Program(string s)
         {
-            Console.WriteLine("E18");
+            Console.WriteLine(s);
             var smjer = new Smjer() { Sifra = 1, Naziv = "Web Programiranje" };
 
             Console.WriteLine(smjer); // kada se ispisuje cijeli objest izvodi se motedoa toString na klasama od dolje prema gore(zadnja je object)
 
             var osoba = new Osoba() { Sifra = 1, Ime = "Pero", Prezime = "Perić" };
+
+            osoba = new Osoba("Marija", "Zimska");
 
             Console.WriteLine(osoba);
             // string je immutable https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/
@@ -52,6 +54,24 @@ namespace Ucenje.E18NasljedivanjePolimorfizam
             Console.WriteLine(smjer.Equals(smjer2));
 
 
+            // ima li smisla raditi instancu klase entitet??
+            //var e = new Entitet();
+            //e.Sifra = 1;
+
+            var e = new EntitetImpl() { Sifra = 1 };
+
+            // još nismo na polimorfizmu
+
+            Obrada[] obrade = new Obrada[2];
+
+            obrade[0] = new ObradaUlazniRacun();
+            obrade[1] = new ObradaIzlazniRacun();
+
+            // polimorfizam
+            foreach(Obrada o in obrade)
+            {
+                o.Procesuiraj();
+            }
         }
     }
 }

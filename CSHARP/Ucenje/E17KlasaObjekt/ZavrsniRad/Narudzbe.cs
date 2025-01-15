@@ -8,11 +8,11 @@ namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
     internal class Narudzbe
     {
-        public int sifra { get; set; }
-        public decimal ukupan_iznos { get; set; }
-        public DateTime? datum { get; set; }
-        public string status { get; set; } = "";
-        public Kupci kupac{ get; set; }= new Kupci();
+        public int Sifra { get; set; }
+        public decimal Ukupan_iznos { get; set; }
+        public DateTime? Datum { get; set; }
+        public string Status { get; set; } = "";
+        public Kupci Kupci{ get; set; }= new Kupci();
 
     }
 }

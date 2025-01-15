@@ -8,9 +8,9 @@ namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
     internal class Proizvodi
     {
-        public int sifra { get; set; }
-        public string naziv { get; set; }
-        public decimal cijena { get; set; }
-        public Nabavljaci Nabavljac { get; set; }=new Nabavljaci();
+        public int Sifra { get; set; }
+        public string Naziv { get; set; }
+        public decimal Cijena { get; set; }
+        public Nabavljaci Nabavljaci { get; set; }=new Nabavljaci();
     }
 }
