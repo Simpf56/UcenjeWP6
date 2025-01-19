@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
-    internal class Kupci
+    public class Kupci
     {
-        public int sifra { get; set; }
+        public int Sifra { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Br_tel { get; set; }

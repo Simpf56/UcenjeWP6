@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
-    internal class Narudzbe
+    public class Narudzbe:Kupci
     {
         public int Sifra { get; set; }
         public decimal Ukupan_iznos { get; set; }

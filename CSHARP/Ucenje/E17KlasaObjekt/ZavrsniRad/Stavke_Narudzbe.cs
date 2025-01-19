@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ucenje.E17KlasaObjekt.ZavrsniRad
 {
-    internal class Stavke_narudzbe
+    public class Stavke_narudzbe:Narudzbe
     {
         public int Sifra { get; set; }
         public Proizvodi Proizvodi{ get; set; } = new Proizvodi();

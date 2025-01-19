@@ -29,7 +29,8 @@ namespace MojProjekat
             "Pretvorba temperature",
             "Sortiranje niza",
             "Kalkulator",
-            "Generator Lozinke"
+            "Generator Lozinke",
+            "Kalkulator ljubavi"
             };
 
             Console.WriteLine();
@@ -93,60 +94,143 @@ namespace MojProjekat
                     GeneratorLozinke();
                     Izbornik();
                     break;
+                case 12:
+                    KalkulatorLjubavi();
+                    Izbornik();
+                    break;
             }
+        }
+
+        private static void KalkulatorLjubavi()
+        {
+            
         }
 
         private static void GeneratorLozinke()
         {
-            NaslovPrograma("Program koji generira lozinke po željama korisnika.");
-
-            bool sadrziVelikaSlova = false;
-            bool sadrziMalaSlova = false;
-            bool sadrziBrojeve = false;
-            bool sadrziZnakove = false;
-            bool sadrziPrviBroj = false;
-            bool sadrziZadnjiBroj = false;
-            bool sadrziPonavljanje = false;
-
-            const string malaSlova = "abcdefghijklmnopqrstuvwxyz";
-            const string brojevi = "0123456789";
-            const string znakovi = "!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
-            const string velikaSlova = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            const string malaIVelikaSlova = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            const string malaSlovaIBrojevi = "abcdefghijklmnopqrstuvwxyz0123456789";
-            const string velikaSlovaIBrojevi = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            const string malaVelikaSlovaIBrojevi = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            const string malaSlovaIZnakovi = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
-            const string velikaSlovaIZnakovi = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
-            const string malaSlovaIBrojeviIZnakovi = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
-            const string velikaSlovaIBrojeviIZnakovi = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
-            const string sveZajedno = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
-
-            //int duzinaLozinke = UcitajCijeliBrojL("Unesi dužinu lozinke: ",8,20);
-            int duzinaLozinke = 8;
-
-            string[] Lozinka = new string[duzinaLozinke];
+            NaslovPrograma("Program koji ispisuje random lozinku/e po specifikacijama korisnika.");
 
 
-            Random random = new Random();
-
-            for (int i = 0; i < Lozinka.Length; i++)
+            string odgovor;
+            do
             {
-                Lozinka[i] = malaSlova[random.Next(malaSlova.Length)].ToString();
-            }
+                const string malaSlova = "abcdefghijklmnopqrstuvwxyz";
+                const string velikaSlova = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                const string brojevi = "0123456789";
+                const string znakovi = "!@#$%^&*()_+-=[]{}|;:'\",.<>?/";
+                bool prvoBroj = false;
+                bool prvoZnak = false;
+                bool zadnjiBroj = false;
+                bool zadnjiZnak = false;
 
-            string generiranaLozinka = string.Join("", Lozinka);
-            Console.WriteLine($"Generirana lozinka: {generiranaLozinka}");
+                int LozinkaDuzina = UcitajCijeliBroj("Unesi dužinu lozinke: ", 3, 100);
+
+                char[] Lozinka = new char[LozinkaDuzina];
+                string LozinkaSadrzi = "";
+                string odgovorDaNe = UcitajDaIliNe("Da li želite mala slova u lozinki?");
+
+                if (odgovorDaNe.ToUpper() == "DA")
+                {
+                    LozinkaSadrzi += malaSlova;
+                }
 
 
+                odgovorDaNe = UcitajDaIliNe("Da li želite velika slova u lozinki?");
+
+                if (odgovorDaNe.ToUpper() == "DA")
+                {
+                    LozinkaSadrzi += velikaSlova;
+                }
 
 
+                odgovorDaNe = UcitajDaIliNe("Da li želite brojeve u lozinki?");
+
+                if (odgovorDaNe.ToUpper() == "DA")
+                {
+                    LozinkaSadrzi += brojevi;
+                }
 
 
+                odgovorDaNe = UcitajDaIliNe("Da li želite interpunkcijske znakove u lozinki?");
+
+                if (odgovorDaNe.ToUpper() == "DA")
+                {
+                    LozinkaSadrzi += znakovi;
+                }
+
+
+                odgovorDaNe = UcitajDaIliNe("Da li želite lozinika započne sa brojem?");
+                if (odgovorDaNe.ToUpper() == "DA")
+                {
+                    prvoBroj = true;
+                }
+
+
+                odgovorDaNe = UcitajDaIliNe("Da li želite lozinika započne sa interpunkcijskim znakom?");
+                if (odgovorDaNe.ToUpper() == "DA")
+                {
+                    prvoZnak = true;
+                }
+
+
+                odgovorDaNe = UcitajDaIliNe("Da li želite lozinika završi sa brojem?");
+                if (odgovorDaNe.ToUpper() == "DA")
+                {
+                    zadnjiBroj = true;
+                }
+
+                odgovorDaNe = UcitajDaIliNe("Da li želite lozinika završi sa interpunkcijskim znakom?");
+                if (odgovorDaNe.ToUpper() == "DA")
+                {
+                    zadnjiZnak = true;
+                }
+
+                int brojLozinki = UcitajCijeliBroj("Koliko lozinki želiš: ", 1, 20);
+
+                Random random = new Random();
+
+                for (int j = 0; j < brojLozinki; j++)
+                {
+
+                    Lozinka = new char[LozinkaDuzina];
+
+
+                    for (int i = 0; i < Lozinka.Length; i++)
+                    {
+                        Lozinka[i] = LozinkaSadrzi[random.Next(LozinkaSadrzi.Length)];
+                    }
+
+
+                    if (prvoBroj && brojevi.Length > 0)
+                    {
+                        Lozinka[0] = brojevi[random.Next(brojevi.Length)];
+                    }
+                    else if (prvoZnak && znakovi.Length > 0)
+                    {
+                        Lozinka[0] = znakovi[random.Next(znakovi.Length)];
+                    }
+
+                    if (zadnjiBroj && brojevi.Length > 0)
+                    {
+                        Lozinka[Lozinka.Length - 1] = brojevi[random.Next(brojevi.Length)];
+                    }
+                    else if (zadnjiZnak && znakovi.Length > 0)
+                    {
+                        Lozinka[Lozinka.Length - 1] = znakovi[random.Next(znakovi.Length)];
+                    }
+
+
+                    Console.WriteLine($"Generirana lozinka {j + 1}: " + new string(Lozinka));
+                }
+
+                Console.WriteLine();
+                odgovor = Ponavljanja();
+            } while (odgovor == "DA");
         }
-        
 
-        private static void Kalkulator()
+
+
+    private static void Kalkulator()
         {
             string odgovor;
             NaslovPrograma("Program koji daje 4 opcije za računanje.");
@@ -581,6 +665,25 @@ namespace MojProjekat
             }
 
             // return "";
+        }
+
+        private static string UcitajDaIliNe(string poruka)
+        {
+            string unos;
+            while (true)
+            {
+                Console.WriteLine(poruka);
+                unos = Console.ReadLine()?.Trim().ToUpper(); // Trim uklanja razmake, ToUpper normalizira unos
+
+                if (unos == "DA" || unos == "NE")
+                {
+                    return unos;
+                }
+                else
+                {
+                    Console.WriteLine("Neispravan unos. Molimo unesite 'DA' ili 'NE'.");
+                }
+            }
         }
         private static double UcitajDoubleBroj(string poruka, double min, double max)
         {
