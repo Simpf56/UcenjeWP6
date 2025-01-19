@@ -103,12 +103,43 @@ namespace MojProjekat
 
         private static void KalkulatorLjubavi()
         {
+            NaslovPrograma("Program koji za dva upisana imena izbacuje postotak kompatibilnosti.");
             
+            
+            string prvoIme = UcitajRijec("Upiši prvo ime: ");
+            string drugoIme = UcitajRijec("Upiši drugo ime: ");
+            string zajedno = string.Join("",prvoIme, drugoIme).ToLower();
+            
+            int []niz = new int[zajedno.Length];
+            bool[] ispisano = new bool[zajedno.Length]; // pocinje sa false na svim vrijednostima
+            int b;
+
+            for (int i = 0; i < zajedno.Length; i++)
+            {
+                b = 0;
+                foreach(char c in zajedno)
+                {
+                    if (zajedno[i] == c)
+                    {
+                        b++;
+                    }
+                }
+                niz[i] = b;
+            }
+
+            for (int i = 0; i < zajedno.Length; i++)
+            {
+                Console.WriteLine("{0}: {1}", zajedno[i], niz[i]);
+            }
+
+
+
+
         }
 
         private static void GeneratorLozinke()
         {
-            NaslovPrograma("Program koji ispisuje random lozinku/e po specifikacijama korisnika.");
+            NaslovPrograma("Program koji ispisuje lozinku/e po specifikacijama korisnika.");
 
 
             string odgovor;
@@ -123,7 +154,7 @@ namespace MojProjekat
                 bool zadnjiBroj = false;
                 bool zadnjiZnak = false;
 
-                int LozinkaDuzina = UcitajCijeliBroj("Unesi dužinu lozinke: ", 3, 100);
+                int LozinkaDuzina = UcitajCijeliBroj("Unesite dužinu lozinke: ", 3, 100);
 
                 char[] Lozinka = new char[LozinkaDuzina];
                 string LozinkaSadrzi = "";
@@ -185,7 +216,7 @@ namespace MojProjekat
                     zadnjiZnak = true;
                 }
 
-                int brojLozinki = UcitajCijeliBroj("Koliko lozinki želiš: ", 1, 20);
+                int brojLozinki = UcitajCijeliBroj("Koliko lozinki želite (Max 20): ", 1, 20);
 
                 Random random = new Random();
 
@@ -663,8 +694,54 @@ namespace MojProjekat
                 }
                 return s;
             }
+        }
 
-            // return "";
+        private static string UcitajRijec(string poruka)
+        {
+            string z = "";
+            string abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            while (true)
+            {
+                Console.Write(poruka);
+                z = Console.ReadLine().Trim();
+
+                if (z.Length == 0)
+                {
+                    Console.WriteLine("Obavezan unos");
+                    continue;
+                }
+
+                bool ispravnaRijec = true;
+
+                foreach (char c in z)
+                {
+                    bool znakIspravan = false;
+                    
+                    for (int i = 0; i < abc.Length; i++)
+                    {
+                        if (c == abc[i])
+                        {
+                            znakIspravan = true;
+                            break;
+                        }
+                    }                    
+                    if (!znakIspravan)
+                    {
+                        ispravnaRijec = false;
+                        break;
+                    }
+                }
+
+                if (ispravnaRijec)
+                {
+                    return z;
+                }
+                else
+                {
+                    Console.WriteLine("To nije riječ. Unesite samo slova.");
+                }
+            }
         }
 
         private static string UcitajDaIliNe(string poruka)
@@ -673,7 +750,7 @@ namespace MojProjekat
             while (true)
             {
                 Console.WriteLine(poruka);
-                unos = Console.ReadLine()?.Trim().ToUpper(); // Trim uklanja razmake, ToUpper normalizira unos
+                unos = Console.ReadLine()?.Trim().ToUpper();
 
                 if (unos == "DA" || unos == "NE")
                 {
