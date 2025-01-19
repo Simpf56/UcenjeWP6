@@ -104,20 +104,20 @@ namespace MojProjekat
         private static void KalkulatorLjubavi()
         {
             NaslovPrograma("Program koji za dva upisana imena izbacuje postotak kompatibilnosti.");
-            
-            
+
+
             string prvoIme = UcitajRijec("Upiši prvo ime: ");
             string drugoIme = UcitajRijec("Upiši drugo ime: ");
-            string zajedno = string.Join("",prvoIme, drugoIme).ToLower();
-            
-            int []niz = new int[zajedno.Length];
+            string zajedno = string.Join("", prvoIme, drugoIme).ToLower();
+
+            int[] niz = new int[zajedno.Length];
             bool[] ispisano = new bool[zajedno.Length]; // pocinje sa false na svim vrijednostima
             int b;
 
             for (int i = 0; i < zajedno.Length; i++)
             {
                 b = 0;
-                foreach(char c in zajedno)
+                foreach (char c in zajedno)
                 {
                     if (zajedno[i] == c)
                     {
@@ -130,6 +130,32 @@ namespace MojProjekat
             for (int i = 0; i < zajedno.Length; i++)
             {
                 Console.WriteLine("{0}: {1}", zajedno[i], niz[i]);
+            }
+
+            int[] prviNiz = new int[zajedno.Length - drugoIme.Length];
+            int[] drugiNiz = new int[zajedno.Length - prvoIme.Length];
+
+            for (int i = 0; i < zajedno.Length; i++)
+            {
+                if (i < prviNiz.Length)
+                {
+                    prviNiz[i] = niz[i];
+                }
+                else
+                {
+                    drugiNiz[i - prviNiz.Length] = niz[i];
+                }
+            }
+
+            Console.WriteLine("\nPrvi niz:");
+            foreach (int broj in prviNiz)
+            {
+                Console.Write(broj + " ");
+            }
+            Console.WriteLine("\nDrugi niz:");
+            foreach (int broj in drugiNiz)
+            {
+                Console.Write(broj + " ");
             }
 
 
@@ -201,6 +227,7 @@ namespace MojProjekat
                 if (odgovorDaNe.ToUpper() == "DA")
                 {
                     prvoZnak = true;
+                    prvoBroj = false;
                 }
 
 
@@ -214,6 +241,7 @@ namespace MojProjekat
                 if (odgovorDaNe.ToUpper() == "DA")
                 {
                     zadnjiZnak = true;
+                    zadnjiBroj=false;
                 }
 
                 int brojLozinki = UcitajCijeliBroj("Koliko lozinki želite (Max 20): ", 1, 20);
