@@ -2,9 +2,9 @@
 
 using Ucenje;
 
-
+new Ucenje.E19GenericiLambdaEktenzije.Program();
 // nvoa instanca klase program
-new Ucenje.E18NasljedivanjePolimorfizam.Program("E18");
+//new Ucenje.E18NasljedivanjePolimorfizam.Program("E18");
 //new Ucenje.E17KlasaObjekt.Program();
 //E14Vjezbanje.Izvedi();
 
