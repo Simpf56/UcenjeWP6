@@ -158,9 +158,35 @@ namespace MojProjekat
                 Console.Write(broj + " ");
             }
 
+            int duljina = (prviNiz.Length > drugiNiz.Length) ? prviNiz.Length : drugiNiz.Length;
+            int minDuljina = (prviNiz.Length < drugiNiz.Length) ? prviNiz.Length : drugiNiz.Length; 
 
+            int[]rezultat = new int[duljina];
 
+            for(int i = 0; i < minDuljina; i++)
+            {
+                rezultat[i] = prviNiz[i] + drugiNiz[drugiNiz.Length - 1 - i];
+            }
 
+            if (prviNiz.Length > minDuljina)
+            {
+                for (int i = minDuljina; i < prviNiz.Length; i++)
+                {
+                    rezultat[i] = prviNiz[i];
+                }
+            }
+            else if (drugiNiz.Length > minDuljina)
+            {
+                for (int i = minDuljina; i < drugiNiz.Length; i++)
+                {
+                    rezultat[i] = drugiNiz[drugiNiz.Length - 1 - i];
+                }
+            }
+            Console.WriteLine(); // prva kalkulacija ujedno pretvara dva niza u jedan int[]rezultat
+            for(int i = 0;i < rezultat.Length; i++)
+            {
+                Console.Write(rezultat[i]);
+            }
         }
 
         private static void GeneratorLozinke()
