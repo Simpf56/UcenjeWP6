@@ -2,10 +2,16 @@
 
 using Ucenje;
 
-new Ucenje.E19GenericiLambdaEktenzije.Program();
-// nvoa instanca klase program
+new Ucenje.E20KonzolnaAplikacija.Izbornik();
+
+//new Ucenje.E19GenericiLambdaEkstenzije.Program();
+
 //new Ucenje.E18NasljedivanjePolimorfizam.Program("E18");
+
+// nova instanca klase program
 //new Ucenje.E17KlasaObjekt.Program();
+
+
 //E14Vjezbanje.Izvedi();
 
 //E15Subota.Izvedi();

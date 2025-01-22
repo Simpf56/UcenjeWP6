@@ -124,7 +124,7 @@ namespace Ucenje
                     ispisi[i] = true;
                 }
             }
-            Console.WriteLine(string.Join(",",ispisi));
+            //Console.WriteLine(string.Join(",",ispisi));
             for(int i = 0; i < izraz.Length; i++)
             {
                 if (ispisi[i] && izraz[i]!=' ')

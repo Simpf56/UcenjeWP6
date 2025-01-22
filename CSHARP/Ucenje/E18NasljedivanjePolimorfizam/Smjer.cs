@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ucenje.E18NasljedivanjePolimorfizam
 {
-    public class Smjer:Entitet // klasa smjer nasljeduje javna i zasticena svojstva i metode iz klase Entitet
+    public class Smjer:Entitet //Klasa Smjer nasljeđuje javna i zaštićena svojstva i metode iz klase Entitet
     {
         public string Naziv { get; set; } = "";
 
@@ -14,10 +14,12 @@ namespace Ucenje.E18NasljedivanjePolimorfizam
         {
             return Naziv;
         }
-        // ovo nije bas pametno, naziv ne odreduje jednoznacno smjer
+
+        // ovo nije baš pametno, naziv ne određuje jednoznačno smjer
         public override bool Equals(object? obj)
         {
             return ((Smjer)obj).Naziv.Equals(Naziv);
         }
+
     }
 }
