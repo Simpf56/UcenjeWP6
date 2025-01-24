@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
 
 namespace MojProjekat
 {
@@ -108,6 +102,8 @@ namespace MojProjekat
 
             string prvoIme = UcitajRijec("Upiši prvo ime: ");
             string drugoIme = UcitajRijec("Upiši drugo ime: ");
+            //string prvoIme = "Marta";
+            //string drugoIme = "Manuel";
             string zajedno = string.Join("", prvoIme, drugoIme).ToLower();
 
             int[] niz = new int[zajedno.Length];
@@ -125,12 +121,7 @@ namespace MojProjekat
                     }
                 }
                 niz[i] = b;
-            }
-
-            for (int i = 0; i < zajedno.Length; i++)
-            {
-                Console.WriteLine("{0}: {1}", zajedno[i], niz[i]);
-            }
+            }           
 
             int[] prviNiz = new int[zajedno.Length - drugoIme.Length];
             int[] drugiNiz = new int[zajedno.Length - prvoIme.Length];
@@ -146,17 +137,7 @@ namespace MojProjekat
                     drugiNiz[i - prviNiz.Length] = niz[i];
                 }
             }
-
-            Console.WriteLine("\nPrvi niz:");
-            foreach (int broj in prviNiz)
-            {
-                Console.Write(broj + " ");
-            }
-            Console.WriteLine("\nDrugi niz:");
-            foreach (int broj in drugiNiz)
-            {
-                Console.Write(broj + " ");
-            }
+            
 
             int duljina = (prviNiz.Length > drugiNiz.Length) ? prviNiz.Length : drugiNiz.Length;
             int minDuljina = (prviNiz.Length < drugiNiz.Length) ? prviNiz.Length : drugiNiz.Length; 
@@ -181,12 +162,83 @@ namespace MojProjekat
                 {
                     rezultat[i] = drugiNiz[drugiNiz.Length - 1 - i];
                 }
-            }
-            Console.WriteLine(); // prva kalkulacija ujedno pretvara dva niza u jedan int[]rezultat
-            for(int i = 0;i < rezultat.Length; i++)
+            }            
+            Console.WriteLine();
+            
+
+            Console.WriteLine($"Vaša kompatibilnost je: {Rekurzija(rezultat)}%");
+
+        }
+
+        private static int Rekurzija(int[] niz)
+        {
+
+
+            niz = DvoZBroj(niz);
+            
+            int[] noviNiz = new int[(niz.Length + 1) / 2];
+            int mjestoNiza = 0;
+
+            for (int i = 0; i < niz.Length / 2; i++)
             {
-                Console.Write(rezultat[i]);
+                noviNiz[mjestoNiza] = niz[i] + niz[niz.Length - 1 - i];
+                mjestoNiza++;
             }
+            
+            if (niz.Length % 2 == 1)
+            {
+                noviNiz[mjestoNiza] = niz[niz.Length / 2];
+            }
+
+            string spojeniNiz = "";
+            foreach(int broj in noviNiz)
+            {
+                spojeniNiz += broj.ToString();
+            }
+            int spojeni = int.Parse(spojeniNiz);
+
+            if(spojeni < 101)
+            {
+                return spojeni;
+            }
+
+            // Poziv rekurzije s novim nizom
+            return Rekurzija(noviNiz);
+        }
+
+        private static int[] DvoZBroj(int[] niz) // pretvara niz sa dvoznamenkastim brojevima u jednoznamenkaste
+        {
+            int brojElemenata = 0;
+                        
+            foreach (int broj in niz)
+            {
+                if (broj >= 10 && broj <= 99)
+                {
+                    brojElemenata += 2;
+                }
+                else
+                {
+                    brojElemenata += 1;
+                }
+            }
+            
+            int[] noviNiz = new int[brojElemenata];
+            int index = 0;
+
+            foreach (int broj in niz)
+            {
+                if (broj >= 10 && broj <= 99)
+                {
+                    noviNiz[index++] = broj / 10;
+                    noviNiz[index++] = broj % 10;
+                }
+                else
+                {
+                    noviNiz[index++] = broj;
+                }
+            }
+
+            return noviNiz;
         }
 
         private static void GeneratorLozinke()
