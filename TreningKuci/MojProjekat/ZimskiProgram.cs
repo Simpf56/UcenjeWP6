@@ -7,9 +7,9 @@ namespace MojProjekat
         public static void Izvedi()
         {
             Console.WriteLine("Program");
-            Izbornik();
+            Menu();
         }
-        private static void Izbornik()
+        private static void Menu()
         {
 
             string[] programi = {
@@ -46,51 +46,51 @@ namespace MojProjekat
                     break;
                 case 1:
                     PovrsinaPravokutnika();
-                    Izbornik();
+                    Menu();
                     break;
                 case 2:
                     ProvjeraBroja();
-                    Izbornik();
+                    Menu();
                     break;
                 case 3:
                     ZbrojElementaNiza();
-                    Izbornik();
+                    Menu();
                     break;
                 case 4:
                     ProsjekOcijena();
-                    Izbornik();
+                    Menu();
                     break;
                 case 5:
                     IspisFibNiza();
-                    Izbornik();
+                    Menu();
                     break;
                 case 6:
                     PreokretStringa();
-                    Izbornik();
+                    Menu();
                     break;
                 case 7:
                     BrojanjeSamoglasnika();
-                    Izbornik();
+                    Menu();
                     break;
                 case 8:
                     PretvorbaTemp();
-                    Izbornik();
+                    Menu();
                     break;
                 case 9:
                     SortiranjeNiza();
-                    Izbornik();
+                    Menu();
                     break;
                 case 10:
                     Kalkulator();
-                    Izbornik();
+                    Menu();
                     break;
                 case 11:
                     GeneratorLozinke();
-                    Izbornik();
+                    Menu();
                     break;
                 case 12:
                     KalkulatorLjubavi();
-                    Izbornik();
+                    Menu();
                     break;
             }
         }
@@ -170,76 +170,7 @@ namespace MojProjekat
 
         }
 
-        private static int Rekurzija(int[] niz)
-        {
-
-
-            niz = DvoZBroj(niz);
-            
-            int[] noviNiz = new int[(niz.Length + 1) / 2];
-            int mjestoNiza = 0;
-
-            for (int i = 0; i < niz.Length / 2; i++)
-            {
-                noviNiz[mjestoNiza] = niz[i] + niz[niz.Length - 1 - i];
-                mjestoNiza++;
-            }
-            
-            if (niz.Length % 2 == 1)
-            {
-                noviNiz[mjestoNiza] = niz[niz.Length / 2];
-            }
-
-            string spojeniNiz = "";
-            foreach(int broj in noviNiz)
-            {
-                spojeniNiz += broj.ToString();
-            }
-            int spojeni = int.Parse(spojeniNiz);
-
-            if(spojeni < 101)
-            {
-                return spojeni;
-            }
-
-            // Poziv rekurzije s novim nizom
-            return Rekurzija(noviNiz);
-        }
-
-        private static int[] DvoZBroj(int[] niz) // pretvara niz sa dvoznamenkastim brojevima u jednoznamenkaste
-        {
-            int brojElemenata = 0;
-                        
-            foreach (int broj in niz)
-            {
-                if (broj >= 10 && broj <= 99)
-                {
-                    brojElemenata += 2;
-                }
-                else
-                {
-                    brojElemenata += 1;
-                }
-            }
-            
-            int[] noviNiz = new int[brojElemenata];
-            int index = 0;
-
-            foreach (int broj in niz)
-            {
-                if (broj >= 10 && broj <= 99)
-                {
-                    noviNiz[index++] = broj / 10;
-                    noviNiz[index++] = broj % 10;
-                }
-                else
-                {
-                    noviNiz[index++] = broj;
-                }
-            }
-
-            return noviNiz;
-        }
+        
 
         private static void GeneratorLozinke()
         {
@@ -908,6 +839,73 @@ namespace MojProjekat
             }
                        
             
+        }
+
+        private static int Rekurzija(int[] niz)
+        {
+            niz = DvoZBroj(niz);
+
+            int[] noviNiz = new int[(niz.Length + 1) / 2];
+            int mjestoNiza = 0;
+
+            for (int i = 0; i < niz.Length / 2; i++)
+            {
+                noviNiz[mjestoNiza] = niz[i] + niz[niz.Length - 1 - i];
+                mjestoNiza++;
+            }
+
+            if (niz.Length % 2 == 1)
+            {
+                noviNiz[mjestoNiza] = niz[niz.Length / 2];
+            }
+
+            string spojeniNiz = "";
+            foreach (int broj in noviNiz)
+            {
+                spojeniNiz += broj.ToString();
+            }
+            int spojeni = int.Parse(spojeniNiz);
+
+            if (spojeni < 101)
+            {
+                return spojeni;
+            }
+            return Rekurzija(noviNiz);
+        }
+
+        private static int[] DvoZBroj(int[] niz) // pretvara niz sa dvoznamenkastim brojevima u jednoznamenkaste
+        {
+            int brojElemenata = 0;
+
+            foreach (int broj in niz)
+            {
+                if (broj >= 10 && broj <= 99)
+                {
+                    brojElemenata += 2;
+                }
+                else
+                {
+                    brojElemenata += 1;
+                }
+            }
+
+            int[] noviNiz = new int[brojElemenata];
+            int index = 0;
+
+            foreach (int broj in niz)
+            {
+                if (broj >= 10 && broj <= 99)
+                {
+                    noviNiz[index++] = broj / 10;
+                    noviNiz[index++] = broj % 10;
+                }
+                else
+                {
+                    noviNiz[index++] = broj;
+                }
+            }
+
+            return noviNiz;
         }
     }
 }
