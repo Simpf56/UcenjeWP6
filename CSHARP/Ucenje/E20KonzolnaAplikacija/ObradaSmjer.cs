@@ -30,7 +30,7 @@ namespace Ucenje.E20KonzolnaAplikacija
             Console.WriteLine("2. Pregled detalja pojedinog smjera");
             Console.WriteLine("3. Unos novog smjera");
             Console.WriteLine("4. Promjena podataka postojećeg smjera");
-            Console.WriteLine("5. Obriši smjer");
+            Console.WriteLine("5. Brisanje smjera");
             Console.WriteLine("6. Povratak na glavni izbornik");
             OdabirOpcijeIzbornika();
         }
@@ -120,7 +120,7 @@ namespace Ucenje.E20KonzolnaAplikacija
                     odabrani.Sifra = Pomocno.UcitajRasponBroja("Unesi šifru smjera", 1, int.MaxValue);
                     break;
                     case 2:
-                        odabrani.Naziv = Pomocno.UcitajString("Unesi naziv smjera", 50, true);
+                        odabrani.Naziv = Pomocno.UcitajString("Unesi naziv smjera", 50, true,odabrani.Naziv);
                         break;
                     // ... ostali
                     case 5:
@@ -156,7 +156,7 @@ namespace Ucenje.E20KonzolnaAplikacija
             Console.WriteLine("Unesite tražene podatke o smjeru");
             Smjerovi.Add(new()
             {
-                Sifra = Pomocno.UcitajRasponBroja("Unesi šifru smjera (ne < 1 ili > 10000)", 1, 10000),
+                Sifra = Pomocno.UcitajRasponBroja("Unesi šifru smjera", 1, int.MaxValue),
                 Naziv = Pomocno.UcitajString("Unesi naziv smjera", 50, true),
                 Cijena = Pomocno.UcitajDecimalniBroj("Unesi cijenu smjera", 0, 10000),
                 IzvodiSeOd = Pomocno.UcitajDatum("Unesi datum od kada se izvodi smjer", true),
