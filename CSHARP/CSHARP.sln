@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI9", "WebAPI9\WebAPI9.csproj", "{A7E4B8CD-41A8-49FE-88E5-52312DDA5536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdunovaApp", "EdunovaApp\EdunovaApp.csproj", "{4A9F3F99-6C78-4255-8323-2FC57669960C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdunovaAPP", "EdunovaApp\EdunovaAPP.csproj", "{4A9F3F99-6C78-4255-8323-2FC57669960C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
