@@ -46,7 +46,7 @@ create table Narudzbe(
 
 
 create table Stavke_narudzbe(
-	sifra int primary key not null identity (1,1),
+	sifra int not null primary key  identity (1,1),
 	proizvod int foreign key references Proizvodi(sifra),
 	narudzba int foreign key references Narudzbe(sifra),
 	kolicina int not null,
