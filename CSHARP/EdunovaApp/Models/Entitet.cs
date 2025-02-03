@@ -1,5 +1,4 @@
-﻿using Microsoft.Identity.Client;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace EdunovaAPP.Models
 {
@@ -7,8 +6,5 @@ namespace EdunovaAPP.Models
     {
         [Key]
         public int Sifra { get; set; }
-
     }
 }
-
-

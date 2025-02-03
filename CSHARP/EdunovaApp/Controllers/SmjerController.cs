@@ -8,23 +8,20 @@ namespace EdunovaAPP.Controllers
     [Route("api/v1/[controller]")]
     public class SmjerController : ControllerBase
     {
+
         // koristimo dependency injection
-        //  1. Definiramo privatno svojstvo
+        // 1. definiramo privatno svojstvo
         private readonly EdunovaContext _context;
 
         // koristimo dependency injection
-        // 2. proslijedis instancu kroz kronstruktor
-
+        // 2. proslijediš instancu kroz konstruktor
         public SmjerController(EdunovaContext context)
         {
             _context = context;
         }
 
 
-
-
         [HttpGet]
-
         public IActionResult Get()
         {
             try
@@ -39,12 +36,11 @@ namespace EdunovaAPP.Controllers
 
         [HttpGet]
         [Route("{sifra:int}")]
-        public IActionResult GetBySifra(int sifra)
-        {
+        public IActionResult GetBySifra(int sifra) {
             try
             {
                 var s = _context.Smjerovi.Find(sifra);
-                if (s== null)
+                if (s == null)
                 {
                     return NotFound();
                 }
@@ -55,6 +51,7 @@ namespace EdunovaAPP.Controllers
                 return BadRequest(e);
             }
         }
+
 
         [HttpPost]
         public IActionResult Post(Smjer smjer)
@@ -71,6 +68,7 @@ namespace EdunovaAPP.Controllers
             }
         }
 
+
         [HttpPut]
         [Route("{sifra:int}")]
         [Produces("application/json")]
@@ -78,27 +76,30 @@ namespace EdunovaAPP.Controllers
         {
             try
             {
+
                 var s = _context.Smjerovi.Find(sifra);
 
-                if(s == null)
+                if (s == null)
                 {
                     return NotFound();
                 }
 
+                // Rucno mapiranje, kasnije automapper
                 s.Naziv = smjer.Naziv;
-                s.Cijena = smjer.Cijena;
+                s.CijenaSmjera = smjer.CijenaSmjera;
                 s.IzvodiSeOd = smjer.IzvodiSeOd;
                 s.Vaucer = smjer.Vaucer;
 
                 _context.Smjerovi.Update(s);
                 _context.SaveChanges();
-                return Ok(new { poruka= "Uspješno promjenjeno" });
+                return Ok(new { poruka= "Uspješno promijenjeno" });
             }
             catch (Exception e)
             {
                 return BadRequest(e);
             }
         }
+
 
         [HttpDelete]
         [Route("{sifra:int}")]
@@ -124,6 +125,5 @@ namespace EdunovaAPP.Controllers
 
 
 
-
     }
-    }
+}
