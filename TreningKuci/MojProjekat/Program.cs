@@ -40,7 +40,7 @@ Console.InputEncoding = System.Text.Encoding.UTF8;
 //VK18SredinaGore.VjezbaKuci();
 //VK19SredinaDolje.VjezbaKuci();
 //ZimskiProgram.Izvedi();
-KonzolnaAplikacija.Izvedi();
+new MojProjekat.KonzolnaAplikacija.Izbornik();
 
 
 
